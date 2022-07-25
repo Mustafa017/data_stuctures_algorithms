@@ -8,9 +8,9 @@ def makeChange(coins, n, knownResults):
     else:
         for i in [c for c in coins if c <= n]:
             numCoins = 1 + makeChange(coins, n-i, knownResults)
-            print('numCoins='+str(numCoins))
+            # print('numCoins='+str(numCoins))
             if numCoins < min_coins:
-                print('am here')
+                # print('am here')
                 min_coins = numCoins
             knownResults[n] = min_coins
 
@@ -18,4 +18,4 @@ def makeChange(coins, n, knownResults):
 
 
 if __name__ == '__main__':
-    print(makeChange([1, 5, 10, 25], 63, [0]*64))
+    print(makeChange([1, 5, 10, 21, 25], 63, [0]*64))
